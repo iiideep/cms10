@@ -778,6 +778,10 @@ class Make extends Base
                     $v['vod_down_list'] = mac_play_list($v['vod_down_from'], $v['vod_down_url'], $v['vod_down_server'], $v['vod_down_note'],'down');
                     $v['vod_down_total'] =  count($v['vod_down_list']);
                 }
+                if(!empty($v['vod_plot_name'])) {
+                    $v['vod_plot_list'] = mac_plot_list($v['vod_plot_name'], $v['vod_plot_detail']);
+                    $v['vod_plot_total'] =  count($v['vod_plot_list']);
+                }
 
                 if($GLOBALS['config']['view']['vod_detail'] == 2){
                     $this->label_maccms();
