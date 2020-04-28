@@ -7,7 +7,7 @@ namespace app\common\util;
 //$ftp->put(ROOT_PATH.$file, $file);
 //@unlink($this->getPicFile($file));
 class Ftp{
-	protected $_config = array( 'ftp_host'=>'www.maccms.com', 'ftp_port'=>'21', 'ftp_user'=>'maccms', 'ftp_pwd' =>'maccms', 'ftp_timeout'=>'30', 'ftp_dir' =>'/', 'ftp_pasv'=>1 );
+	protected $_config = array( 'ftp_host'=>'www.test.com', 'ftp_port'=>'21', 'ftp_user'=>'maccms', 'ftp_pwd' =>'maccms', 'ftp_timeout'=>'30', 'ftp_dir' =>'/', 'ftp_pasv'=>1 );
 	protected $_conn = null; 
 	protected $_rs = null; 
 	public function __construct($config=array()){ 

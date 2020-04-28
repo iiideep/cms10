@@ -296,7 +296,7 @@ function mac_get_rndstr($length=32,$f='')
     $len = strlen($pattern) -1;
     $res='';
     for($i=0; $i<$length; $i++){
-        $res .= $pattern{mt_rand(0,$len)};
+        $res .= $pattern[mt_rand(0,$len)];
     }
     return $res;
 }
@@ -472,7 +472,7 @@ function mac_page_param($record_total, $page_size, $page_current, $page_url,$pag
                 $page_num[$i] = $i;
             }
         } elseif ($page_current > $page_num_right) {
-            for ($i = ($page_num_right + 1); $i <= $page_total; $i++) {
+            for ($i = ($page_num_right + 0); $i <= $page_total; $i++) {
                 $page_num[$i] = $i;
             }
         } else {
@@ -833,7 +833,7 @@ function mac_rep_pse_syn($psearr,$txt)
 }
 
 function mac_get_tag($title,$content){
-    $url ='http://api.maccms.com/keyword/?callback=&txt='.rawurlencode($title).rawurlencode(mac_substring(strip_tags($content),200));
+    $url ='http://api.maccms.com/keyword/index/txt/'.rawurlencode($title).rawurlencode(mac_substring(strip_tags($content),200));
     $data = mac_curl_get($url);
 	$json = @json_decode($data,true);
 	if($json){

@@ -102,8 +102,7 @@ class Index extends Base
 
         $this->assign('info',$this->_admin);
         $this->assign('title','欢迎页面');
-        $html = $this->fetch('admin@index/welcome');
-        echo $html.'<span style="display:none">'. '<script src="//update.maccms.com/v10/?c=check&v='.$version['code'].'&p='.PHP_VERSION.'&tp='. THINK_VERSION .'&t='.time().'"></script></span>';
+        return $this->fetch('admin@index/welcome');
     }
 
     public function quickmenu()

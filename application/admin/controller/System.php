@@ -41,8 +41,8 @@ class System extends Base
             'password' => $param['password']
         ];
 
-        Cache::connect($options);
-        Cache::set('test', 'test');
+        $hd = Cache::connect($options);
+        $hd->set('test', 'test');
 
         return json(['code' => 1, 'msg' => '测试成功']);
     }
